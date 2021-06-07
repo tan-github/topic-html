@@ -1,0 +1,19 @@
+{
+    "name": "tan-github/topic-html",
+    "description": "试题HTML渲染",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "tan",
+            "email": "923360732@qq.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "TopicHtml\\": "src/"
+        }
+    }
+}

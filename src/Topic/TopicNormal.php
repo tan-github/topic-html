@@ -5,6 +5,7 @@
  * Date: 2021/6/2
  * Time: 13:03
  */
+
 namespace TopicHtml\Topic;
 
 use TopicHtml\Part\TopicNo;
@@ -29,7 +30,7 @@ class TopicNormal
      */
     public function getCssStyleContent()
     {
-        return $this->tpl_obj->getCssStyleLabelContent().$this->css_style_content;
+        return $this->tpl_obj->getCssStyleLabelContent() . $this->css_style_content;
     }
 
     /**
@@ -76,8 +77,6 @@ class TopicNormal
         );
 
 
-
-
         $tpl_obj = &$this->tpl_obj;
         //模板结构
         $topic_header_part = array(
@@ -95,8 +94,8 @@ class TopicNormal
             )
         );
 
-        $tpl_obj->addTplPart('topic_header',$topic_header_part);
-        $tpl_obj->addTplPart('topic_no_wrap',$topic_no_wrap_part);
+        $tpl_obj->addTplPart('topic_header', $topic_header_part);
+        $tpl_obj->addTplPart('topic_no_wrap', $topic_no_wrap_part);
 
         $tpl_obj->setHtmlContentArr($html_content_arr);
         $tpl_obj->setPartClassArr($part_class_arr);

@@ -3,28 +3,27 @@ var page = require('webpage').create(),
     system = require('system'),
     address, output, size, t, title, getMingyan, getFooter, getHeader, totalPage;
 //设置资源价值超时时间(10s)
-page.settings.resourceTimeout=20000
-
+page.settings.resourceTimeout = 20000
 
 
 //页面页脚宽度
 var mei_lenght = '595px';
-getFooter = function(pageNum,numPages) {
+getFooter = function (pageNum, numPages) {
     totalPage = numPages;
-    return "<table style=\"border-top: 1px solid black; width: "+mei_lenght+";font-family: Arial;font-size: 8px;\">"
-        +"<tr>"
-        +"<td style=\"text-align: left;width: 400px;font-family: \"Times New Roman\", \"SimSun\";\">xxxxxxxx</td>"
-        +"<td style=\"text-align: right;\">第<span class=\"page\">"+pageNum+"</span>页，共<span class=\"topage\">"+numPages+"</span>页</td>"
-        +"</tr>"
-        +"</table>";
+    return "<table style=\"border-top: 1px solid black; width: " + mei_lenght + ";font-family: Arial;font-size: 8px;\">"
+        + "<tr>"
+        + "<td style=\"text-align: left;width: 400px;font-family: \"Times New Roman\", \"SimSun\";\">xxxxxxxx</td>"
+        + "<td style=\"text-align: right;\">第<span class=\"page\">" + pageNum + "</span>页，共<span class=\"topage\">" + numPages + "</span>页</td>"
+        + "</tr>"
+        + "</table>";
 }
 
-getHeader = function(title) {
-    return "<table style=\"border-bottom: 1px solid black; width: "+mei_lenght+";font-family: Arial;font-size: 8px;\">"
-        +"<tr>"
+getHeader = function (title) {
+    return "<table style=\"border-bottom: 1px solid black; width: " + mei_lenght + ";font-family: Arial;font-size: 8px;\">"
+        + "<tr>"
         + "页眉"
-        +"</tr>"
-        +"</table>";
+        + "</tr>"
+        + "</table>";
 }
 
 
@@ -36,24 +35,24 @@ if (!system.args.length === 5) {
     address = system.args[1];
     output = system.args[2];
     title = system.args[4];
-    page.viewportSize = { width: 600, height: 600 };
+    page.viewportSize = {width: 600, height: 600};
     if (system.args[2].substr(-4) === ".pdf") {
         size = system.args[3].split('*');
-        if(size.length === 2) {
+        if (size.length === 2) {
             page.paperSize = {
                 width: size[0],
                 height: size[1],
                 margin: '10px',
                 header: {
                     height: "1cm",
-                    contents: phantom.callback(function(pageNum, numPages) {
+                    contents: phantom.callback(function (pageNum, numPages) {
                         return getHeader(title);
                     })
                 },
                 footer: {
                     height: "1cm",
-                    contents: phantom.callback(function(pageNum, numPages) {
-                        return getFooter(pageNum,numPages);
+                    contents: phantom.callback(function (pageNum, numPages) {
+                        return getFooter(pageNum, numPages);
                     })
                 }
             }
@@ -64,14 +63,14 @@ if (!system.args.length === 5) {
                 margin: '10px',
                 header: {
                     height: "1cm",
-                    contents: phantom.callback(function(pageNum, numPages) {
+                    contents: phantom.callback(function (pageNum, numPages) {
                         return getHeader(title);
                     })
                 },
                 footer: {
                     height: "1cm",
-                    contents: phantom.callback(function(pageNum, numPages) {
-                        return getFooter(pageNum,numPages);
+                    contents: phantom.callback(function (pageNum, numPages) {
+                        return getFooter(pageNum, numPages);
                     })
                 }
             }
@@ -91,8 +90,8 @@ if (!system.args.length === 5) {
             window.setTimeout(function () {
                 page.render(output);
                 t = Date.now() - t;
-                console.log('Generate PDF file succeed in '+ t +' msec!');
-                console.log('##'+ totalPage +'##');
+                console.log('Generate PDF file succeed in ' + t + ' msec!');
+                console.log('##' + totalPage + '##');
                 phantom.exit();
             }, 200);
         }

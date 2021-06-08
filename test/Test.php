@@ -84,21 +84,19 @@ class Test
 $test = new Test();
 list($html_content,$css) = $test->geTest();
 
-$html = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Title</title>
+$html_content = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Title</title>
 '.$css.'<br><br><br><br><br>
 </head><body>'.$html_content.'</body></html>';
 
-file_put_contents('test.html', $html);
-
-
 
 $pdf_obj = new \TopicHtml\Pdf\Pdf();
-//$pdf_obj->setPhantomjsExec('/usr/local/phantomjs/bin/phantomjs');//2.1
-$pdf_obj->setPhantomjsExec('/usr/local/phantomjs-1.9.8/bin/phantomjs');//1.9
-$pdf_obj->setPhantomjsVer('1.9');
+$pdf_obj->setPhantomjsExec('/usr/local/phantomjs/bin/phantomjs');//2.1
+
+//$pdf_obj->setPhantomjsExec('/usr/local/phantomjs-1.9.8/bin/phantomjs');//1.9
+//$pdf_obj->setPhantomjsVer('1.9');
 
 //$pdf_obj->setHtmlFile('/www/topic-html/src/Pdf/tmp/test222.html');
-$pdf_obj->saveHtmlFile($html);
+$pdf_obj->saveHtmlFile($html_content);
 
 $rs = $pdf_obj->createPdf();
 //$topic_content = $test->getTopicContent();

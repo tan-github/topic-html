@@ -27,6 +27,8 @@ class Part
     protected $extra_class_name_arr = array();
     //属性数组
     private $attribute_arr = array();
+    //css类名后缀
+    static public $css_class_suffix = '_xxxxx';
 
 
     public function __construct($part_name = '')
@@ -184,8 +186,6 @@ class Part
     }
 
 
-
-
     /**
      * 获取部件HTML
      * @return string
@@ -214,12 +214,12 @@ class Part
         if ($this->isShow()) {
             //类名
             $class_name_arr = $this->getExtraClassNameArr();
-            $class_name_arr[] = $this->style_class_name;
+            $class_name_arr[] = $this->style_class_name . self::$css_class_suffix;
             $class_name_arr = array_reverse($class_name_arr);
 //            $str .= '<'.$this->html_label.' class="' . $this->style_class_name . '" id="' . $this->style_id . '" style="' . $style . '">';
-            $str .= '<' . $this->html_label . ' class="' . implode(' ', $class_name_arr) . '" style="' . $style . '"  '.implode(' ',$attribute_str_arr).'>';
+            $str .= '<' . $this->html_label . ' class="' . implode(' ', $class_name_arr) . '" style="' . $style . '"  ' . implode(' ', $attribute_str_arr) . '>';
             $str .= $this->getHtmlContent();
-            if (!in_array($this->html_label,array('img'))) {
+            if (!in_array($this->html_label, array('img'))) {
                 $str .= "</{$this->html_label}>";
             }
         }

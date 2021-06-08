@@ -32,7 +32,7 @@ class TopicOption extends Part
         $option_arr = $this->getHtmlContent();
 
         //选择题
-        if (is_array($option_arr) && $option_arr && in_array($option_arr['type_id'],array(1,2))) {
+        if (is_array($option_arr) && $option_arr && in_array($option_arr['type_id'], array(1, 2))) {
             //数学：0纵向 1横向 2一排两个
             //全学科：1:纵向排列 2:横向排列 3:一排两个
             $list_type = $option_arr['list_type'];
@@ -42,12 +42,12 @@ class TopicOption extends Part
                 $rate = 25;
             } elseif ($list_type == 3) {
                 $rate = 50;
-            }else{
+            } else {
                 $rate = 100;
             }
 
             //li
-            $style = array('width' => $rate.'%','float' => 'left');
+            $style = array('width' => $rate . '%', 'float' => 'left');
             $li_html = '';
 
             foreach ($option_arr['options'] as $option) {

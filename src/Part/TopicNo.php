@@ -5,6 +5,7 @@
  * Date: 2021/6/1
  * Time: 17:04
  */
+
 namespace TopicHtml\Part;
 
 class TopicNo extends Part

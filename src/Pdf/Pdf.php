@@ -5,6 +5,7 @@
  * Date: 2021/6/4
  * Time: 9:58
  */
+
 namespace TopicHtml\Pdf;
 
 class Pdf
@@ -25,8 +26,8 @@ class Pdf
     public function __construct()
     {
         $this->is_cli = preg_match("/cli/i", php_sapi_name()) ? true : false;
-        $this->html_file = __DIR__.'/tmp/test.html';
-        $this->pdf_file = __DIR__.'/tmp/test.pdf';
+        $this->html_file = __DIR__ . '/tmp/test.html';
+        $this->pdf_file = __DIR__ . '/tmp/test.pdf';
     }
 
     /**
@@ -113,9 +114,9 @@ class Pdf
     {
         $error = array();
         $result = array(
-            'status' =>1 ,
-            'data' =>'' ,
-            'msg' =>'生成成功' ,
+            'status' => 1,
+            'data' => '',
+            'msg' => '生成成功',
         );
         $output = $this->htmlToPdf($this->html_file, $this->pdf_file, $this->paper_size);
 
@@ -126,7 +127,7 @@ class Pdf
         if ($error) {
             $result['msg'] = implode(',', $error);
             $result['status'] = 0;
-        }else{
+        } else {
             $result['data'] = array(
                 'html_path' => $this->html_file,
                 'pdf_path' => $this->pdf_file,
@@ -149,7 +150,7 @@ class Pdf
             $html_file = 'file:///' . $html_file;
         }
 
-        $html2pdf_js = __DIR__.'/../Static/html2pdf/html2pdf_' . $this->phantomjs_ver . '.js';
+        $html2pdf_js = __DIR__ . '/../Static/html2pdf/html2pdf_' . $this->phantomjs_ver . '.js';
         $pdf_title = 'xxxx';
         $cmd = "{$this->phantomjs_exec} {$html2pdf_js} {$html_file} {$pdf_file} {$paper_size} '{$pdf_title}'";
 

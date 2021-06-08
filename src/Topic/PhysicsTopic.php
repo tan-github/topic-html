@@ -9,6 +9,7 @@
 namespace TopicHtml\Topic;
 
 
+use TopicHtml\Part\Part;
 use TopicHtml\Part\TopicOption;
 
 class PhysicsTopic extends TopicBase
@@ -72,7 +73,7 @@ class PhysicsTopic extends TopicBase
         $topic_option_arr = array();
         foreach ($topic_info['items'] as $item) {
             foreach ($item['options'] as $option) {
-                $topic_option_arr[] = $option['option_content'];
+                $topic_option_arr[] = Image::resetImgSize($option['option_content']);
             }
             $topic_option_arr = $item;
         }
@@ -86,9 +87,10 @@ class PhysicsTopic extends TopicBase
 
         $html_content_arr = array(
             'topic_id' => $topic_info['id'],
-            'topic_no' => isset($topic_info['topic_no'])?$topic_info['topic_no']:1,
+            'topic_no' => isset($topic_info['topic_no']) ? $topic_info['topic_no'] : 1,
             'topic_no_desc' => "考点：" . implode(',', $kps),
-            'topic_title' => $topic_info['title'],
+//            'topic_title' => $topic_info['title'],
+            'topic_title' => Image::resetImgSize($topic_info['title']),
             'topic_option' => $topic_option_arr,
         );
 
@@ -140,7 +142,7 @@ class PhysicsTopic extends TopicBase
     private function getCssByType()
     {
         $style_0 = "<style>
-        .topic_no {
+        .topic_no" . Part::$css_class_suffix . " {
             color: #ffffff;
             text-align: center;
             line-height: 4.5mm;
@@ -150,7 +152,7 @@ class PhysicsTopic extends TopicBase
             display: inline-block;
         }
 
-        .topic_no:after {
+        .topic_no" . Part::$css_class_suffix . ":after {
             position: absolute;
             content: '';
             width: 2.28mm;
@@ -162,14 +164,14 @@ class PhysicsTopic extends TopicBase
             margin-top: -1mm;
         }
 
-        .topic_no_desc {
+        .topic_no_desc" . Part::$css_class_suffix . " {
             margin-left: 1mm;
             line-height: 3.8mm;
         }
 
     </style>";
         $style_1 = "<style>
-        .topic_header {
+        .topic_header" . Part::$css_class_suffix . " {
             position: absolute;
             width: 18mm;
             margin-top: -2.4mm;

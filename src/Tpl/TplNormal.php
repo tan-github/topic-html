@@ -1,5 +1,7 @@
 <?php
+
 namespace TopicHtml\Tpl;
+
 use TopicHtml\Part\Part;
 
 
@@ -9,7 +11,6 @@ use TopicHtml\Part\Part;
  * Date: 2021/6/1
  * Time: 16:15
  */
-
 class TplNormal
 {
     //行内样式数组
@@ -111,7 +112,6 @@ class TplNormal
     }
 
 
-
     public function __construct()
     {
         $this->init();
@@ -121,13 +121,13 @@ class TplNormal
     {
         //css 样式
         $css_style_arr = array(
-            '.topic_border' => array(
+            '.topic_border' . Part::$css_class_suffix => array(
                 'font-size' => '7.68pt',
                 'vertical-align' => 'middle',
                 'text-align' => 'justify',
                 'padding' => '10px'
             ),
-            '.topic_border img' => array(
+            '.topic_border' . Part::$css_class_suffix . ' img' => array(
                 'vertical-align' => 'middle',
             )
         );
@@ -165,7 +165,7 @@ class TplNormal
                 foreach ($value as $k => $v) {
                     $this->css_style_arr[$key][$k] = $v;
                 }
-            }else{
+            } else {
                 $this->css_style_arr[$key] = $value;
             }
         }
@@ -216,21 +216,21 @@ class TplNormal
                 $this->__getHtml($value['part_arr']);
 
                 if (self::$part_html_arr) {
-                    self::$cur_part_obj = $this->getPartObj($part_name,$value);
-                    self::$cur_part_obj ->setHtmlContent(implode('', self::$part_html_arr));
+                    self::$cur_part_obj = $this->getPartObj($part_name, $value);
+                    self::$cur_part_obj->setHtmlContent(implode('', self::$part_html_arr));
                     self::$part_html_arr = array();
-                    self::$part_html_arr[]  = self::$cur_part_obj->getPart();
+                    self::$part_html_arr[] = self::$cur_part_obj->getPart();
                 }
                 continue;
-            }elseif (is_array($value)) {
+            } elseif (is_array($value)) {
                 //其它属性
-            }else{
+            } else {
                 $part_name = $value;
             }
 
-            $part_obj = $this->getPartObj($part_name,$value);
+            $part_obj = $this->getPartObj($part_name, $value);
 
-            self::$part_html_arr[]  = $part_obj->getPart();
+            self::$part_html_arr[] = $part_obj->getPart();
         }
     }
 
@@ -240,11 +240,11 @@ class TplNormal
      * @param array $value
      * @return Part
      */
-    private function getPartObj($part_name,$value = array())
+    private function getPartObj($part_name, $value = array())
     {
         if (isset($this->part_class_arr[$part_name])) {
             $part_obj = new $this->part_class_arr[$part_name]();
-        }else{
+        } else {
             $part_obj = new Part($part_name);
         }
 
@@ -300,7 +300,6 @@ class TplNormal
 //    }
 
 
-
 //    public function getTplHtml()
 //    {
 //        $part_arr = array();
@@ -333,7 +332,7 @@ class TplNormal
      * @param $part_name 部件名称
      * @param $style_arr 样式数组  如：array('color' => 'red')
      */
-    public function setStyleByPartName($part_name,$style_arr)
+    public function setStyleByPartName($part_name, $style_arr)
     {
         if (!isset($this->style_arr[$part_name])) {
             $this->style_arr[$part_name] = array();
@@ -357,7 +356,7 @@ class TplNormal
             foreach ($style_arr as $key => $value) {
                 $_style_arr[] = $key . ':' . $value;
             }
-            $_st_arr[] = '.'.$part_name.'{'.implode(':',$_style_arr).'}';
+            $_st_arr[] = '.' . $part_name . '{' . implode(':', $_style_arr) . '}';
         }
         $style_str .= implode(';', $_st_arr);
 
@@ -377,10 +376,10 @@ class TplNormal
             'topic_border' => array(//部件名称（默认div）
                 //包含的子部件
                 'part_arr' => array(
-                    'topic_header'=>array(),//试题题号上部模块
-                    'topic_no_wrap'=>array(),//题号模块
-                    'topic_title'=>array(),//题干模块
-                    'topic_option'=>array(),//选项模块
+                    'topic_header' => array(),//试题题号上部模块
+                    'topic_no_wrap' => array(),//题号模块
+                    'topic_title' => array(),//题干模块
+                    'topic_option' => array(),//选项模块
                 ),
 //                'label_name' => 'img',//hmtl标签名称
 //                'attribute_arr' => array('src'=>'http://27/1590550332524382.png'),//属性数组
@@ -398,7 +397,7 @@ class TplNormal
      * @param $part_name
      * @param $add_part_arr
      */
-    public function addTplPart($part_name,$add_part_arr)
+    public function addTplPart($part_name, $add_part_arr)
     {
         $this->tpl_structure['topic_border']['part_arr'][$part_name] = $add_part_arr;
 

@@ -55,25 +55,41 @@ class PhysicsTopic extends TopicBase
         //模板结构
         $this->editTpl();
 
+        //试题题干和选项
         $tpl_obj->setHtmlContentArr($html_content_arr);
         $tpl_obj->setPartClassArr($part_class_arr);
 
-        $html = $tpl_obj->getTplHtml();
+        $topic_html = $tpl_obj->getTplHtml();
 
+        //试题答案和解析
+        $tpl_obj->setHtmlContentArr($html_content_arr);
+        $answer_parse_html = $tpl_obj->getTplHtmlAnswerParse();
 
-        return $html;
+        return array(
+            'topic_html' => $topic_html,
+            'answer_parse_html' => $answer_parse_html,
+        );
     }
 
     private function getPhysicTopicHtmlContent(&$topic_info)
     {
 //        $subject_id = $topic_info['subject_id'];
 //        $topic_type = $topic_info['type_id'];
-//        $parse_content = $topic_info['parse_content'];
 
-        $topic_option_arr = array();
+        $topic_option_arr = array();//选项
+        $topic_answer_arr = array();//试题答案
         foreach ($topic_info['items'] as $item) {
-            foreach ($item['options'] as $option) {
-                $topic_option_arr[] = Image::resetImgSize($option['option_content']);
+            $type_id = $item['type_id'];
+            foreach ($item['options'] as $k => $option) {
+                if (in_array($type_id, array(1, 2))) {
+                    if ($option['option_correct']) {
+                        $topic_answer_arr[] = isset($this->letter_arr[$k]) ? $this->letter_arr[$k] : '';
+                    }
+                    //处理选项图片
+                    $item['options'][$k]['option_content'] = Image::resetImgSize($option['option_content']);
+                }else{
+                    $topic_answer_arr[] = Image::resetImgSize($option['option_content']);
+                }
             }
             $topic_option_arr = $item;
         }
@@ -92,6 +108,8 @@ class PhysicsTopic extends TopicBase
 //            'topic_title' => $topic_info['title'],
             'topic_title' => Image::resetImgSize($topic_info['title']),
             'topic_option' => $topic_option_arr,
+            'topic_answer' => '【答案】 '.implode(',',$topic_answer_arr),
+            'topic_parse' => '【解析】 '.(isset($topic_info['parse_content'])?Image::resetImgSize($topic_info['parse_content']):'略'),
         );
 
         $this->editHtmlContent($html_content_arr);
@@ -109,6 +127,14 @@ class PhysicsTopic extends TopicBase
                 'attribute_arr' => array('src' => 'http://zsyapi.testing.xueping.com/statics/images/physics_isp/train.png'));
 
             $this->getTplObj()->addTplPart('topic_header', $topic_header_part);
+            $topic_no_wrap_part = array(
+                'part_arr' => array(
+                    'topic_no' => array(
+                        'label_name' => 'label'
+                    )
+                )
+            );
+            $this->getTplObj()->addTplPart('topic_no_wrap', $topic_no_wrap_part);
         } else {
             $topic_no_wrap_part = array(
                 'part_arr' => array(
@@ -135,7 +161,7 @@ class PhysicsTopic extends TopicBase
         if ($this->product_topic_type == 1) {//提分题
             $html_content_arr['topic_no'] = $html_content_arr['topic_no'] . '.【' . $html_content_arr['topic_id'] . '】';
         } else {
-            $html_content_arr['topic_no'] = '第' . $html_content_arr['topic_no'] . '题.【' . $html_content_arr['topic_id'] . '】';
+            $html_content_arr['topic_no'] = '第' . $html_content_arr['topic_no'] . '题【' . $html_content_arr['topic_id'] . '】';
         }
     }
 
@@ -174,7 +200,7 @@ class PhysicsTopic extends TopicBase
         .topic_header" . Part::$css_class_suffix . " {
             position: absolute;
             width: 18mm;
-            margin-top: -2.4mm;
+            margin-top: -5.4mm;
             margin-left: -3.3mm;
         }
     </style>";

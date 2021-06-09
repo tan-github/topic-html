@@ -121,13 +121,15 @@ class TplNormal
     {
         //css 样式
         $css_style_arr = array(
-            '.topic_border' . Part::$css_class_suffix => array(
+            '.topic_border' . Part::$css_class_suffix.',.topic_answer_parse_border'. Part::$css_class_suffix => array(
                 'font-size' => '7.68pt',
                 'vertical-align' => 'middle',
                 'text-align' => 'justify',
-                'padding' => '10px'
+//                'padding' => '10px',
+                'overflow' => 'hidden',
+//                'border' => '1px solid red'
             ),
-            '.topic_border' . Part::$css_class_suffix . ' img' => array(
+            '.topic_border' . Part::$css_class_suffix . ' img,'.'.topic_answer_parse_border' . Part::$css_class_suffix . ' img' => array(
                 'vertical-align' => 'middle',
             )
         );
@@ -198,7 +200,29 @@ class TplNormal
      */
     public function getTplHtml()
     {
+        self::$part_html_arr = array();
         $tpl_structure = $this->getTplStructure();
+
+        $this->__getHtml($tpl_structure);
+
+        return implode('', self::$part_html_arr);
+    }
+
+    /**
+     * 答案和解析
+     */
+    public function getTplHtmlAnswerParse()
+    {
+        self::$part_html_arr = array();
+        $tpl_structure = array(
+            'topic_answer_parse_border' => array(//部件名称（默认div）
+                //包含的子部件
+                'part_arr' => array(
+                    'topic_answer' => array(),//试题答案
+                    'topic_parse' => array(),//试题解析
+                )
+            ),
+        );
 
         $this->__getHtml($tpl_structure);
 
@@ -267,65 +291,6 @@ class TplNormal
         return $part_obj;
     }
 
-//    private function __getHtml2($arr)
-//    {
-//        foreach ($arr as $key => $value) {
-//            if (is_array($value) && $value) {
-//                $this->__getHtml($value);
-//
-//                if (self::$part_html_arr) {
-//                    self::$pre_part_obj->setHtmlContent(implode('', self::$part_html_arr));
-//                    self::$part_html_arr = array();
-//                    self::$part_html_arr[]  = self::$pre_part_obj->getPart();
-//                }
-//
-//            }else{
-//                $key = $value;
-//            }
-//
-//
-//            if (isset($this->part_class_arr[$key])) {
-//                $part_obj = new $this->part_class_arr[$key]();
-//            }else{
-//                $part_obj = new Part($key);
-//            }
-//
-//            self::$pre_part_obj = &$part_obj;
-//
-//            if (isset($this->html_content_arr[$key]) && $this->html_content_arr[$key]) {
-//                $part_obj->setHtmlContent($this->html_content_arr[$key]);
-//            }
-//            self::$part_html_arr[]  = $part_obj->getPart();
-//        }
-//    }
-
-
-//    public function getTplHtml()
-//    {
-//        $part_arr = array();
-//
-//
-//        foreach ($this->part_class_arr as $part_name => $part_class_name) {
-//            $part_obj = new $part_class_name();
-//            $style_class_name = $part_obj->getStyleClassName();
-//            //行内样式
-//            if ($this->getIsUseInlineStyle() && isset($this->style_arr[$style_class_name])) {
-//                $part_obj->setStyleArr($this->style_arr[$style_class_name]);
-//            }
-//            //HTML内容
-//            if (isset($this->html_content_arr[$style_class_name]) && $this->html_content_arr[$style_class_name]) {
-//                $part_obj->setHtmlContent($this->html_content_arr[$style_class_name]);
-//            }
-//            $part_arr[$part_name] = $part_obj->getPart();
-//        }
-//
-//        $border_obj = new TopicBorder();
-//        $border_obj->setHtmlContent(implode('',$part_arr));
-//        $border_obj->setStyleArr($this->style_arr[$border_obj->getStyleClassName()]);
-//        $tpl_html = $border_obj->getPart();
-//
-//        return $tpl_html;
-//    }
 
     /**
      * 通过key设置样式

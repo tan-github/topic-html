@@ -59,10 +59,9 @@ class TopicOption extends Part
             //ul
             $style = array(
                 'list-style-type' => 'upper-alpha',
-//                'padding' => '0px',
                 'padding-left' => '20px',
                 'display' => 'block',
-                'visibility' => 'hidden',
+//                'visibility' => 'hidden',
                 'clear' => 'both',
             );
             $this->option_ul_obj->setStyleArr($style);

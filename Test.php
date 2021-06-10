@@ -6,7 +6,7 @@
  * Time: 17:00
  */
 
-require_once 'vendor/autoload.php';
+require_once __DIR__.'vendor/autoload.php';
 date_default_timezone_set('PRC');
 
 class Test
@@ -14,7 +14,6 @@ class Test
     public function geTest()
     {
         $obj = new \TopicHtml\Topic\PhysicsTopic();
-        $obj->setProductTopicType(0);
         $topic_content = $this->getTopicContent();
         $html = $obj->getTopicHtmlContent($topic_content[0]);
         $css = $obj->getCssStyleContent();

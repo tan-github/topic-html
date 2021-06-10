@@ -122,7 +122,8 @@ class TplNormal
         //css 样式
         $css_style_arr = array(
             '.topic_border' . Part::$css_class_suffix.',.topic_answer_parse_border'. Part::$css_class_suffix => array(
-                'font-size' => '7.68pt',
+                'font-size' => '12px',
+                'line-height' => '16px',
                 'vertical-align' => 'middle',
                 'text-align' => 'justify',
 //                'padding' => '10px',
@@ -341,8 +342,8 @@ class TplNormal
             'topic_border' => array(//部件名称（默认div）
                 //包含的子部件
                 'part_arr' => array(
-                    'topic_header' => array(),//试题题号上部模块
-                    'topic_no_wrap' => array(),//题号模块
+//                    'topic_header' => array(),//试题题号上部模块
+//                    'topic_no_wrap' => array(),//题号模块
                     'topic_title' => array(),//题干模块
                     'topic_option' => array(),//选项模块
                 ),

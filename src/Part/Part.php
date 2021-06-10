@@ -28,7 +28,7 @@ class Part
     //属性数组
     private $attribute_arr = array();
     //css类名后缀
-    static public $css_class_suffix = '_xxxxx';
+    static public $css_class_suffix = '_202106';
 
 
     public function __construct($part_name = '')

@@ -16,6 +16,7 @@ class TopicOption extends Part
      * @var string
      */
     protected $part_name = 'topic_option';
+    private $is_all_subject = true;
     private $option_ul_obj;
     private $option_li_obj;
 
@@ -27,6 +28,24 @@ class TopicOption extends Part
         $this->option_li_obj = new TopicOptionLi();
     }
 
+    /**
+     * @return bool
+     */
+    public function isAllSubject()
+    {
+        return $this->is_all_subject;
+    }
+
+    /**
+     * @param bool $is_all_subject
+     */
+    public function setIsAllSubject($is_all_subject)
+    {
+        $this->is_all_subject = $is_all_subject;
+    }
+
+
+
     public function getPart()
     {
         $option_arr = $this->getHtmlContent();
@@ -36,14 +55,23 @@ class TopicOption extends Part
             //数学：0纵向 1横向 2一排两个
             //全学科：1:纵向排列 2:横向排列 3:一排两个
             $list_type = $option_arr['list_type'];
-            $list_type = $list_type == 0 ? 1 : $list_type;
-
-            if ($list_type == 2) {
-                $rate = 25;
-            } elseif ($list_type == 3) {
-                $rate = 50;
-            } else {
-                $rate = 100;
+            if ($this->isAllSubject()) {
+                $list_type = $list_type == 0 ? 1 : $list_type;
+                if ($list_type == 2) {
+                    $rate = 25;
+                } elseif ($list_type == 3) {
+                    $rate = 50;
+                } else {
+                    $rate = 100;
+                }
+            }else{
+                if ($list_type == 1) {
+                    $rate = 25;
+                } elseif ($list_type == 2) {
+                    $rate = 50;
+                } else {
+                    $rate = 100;
+                }
             }
 
             //li

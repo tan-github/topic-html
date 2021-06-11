@@ -1,0 +1,123 @@
+[
+    {
+        "id": 283508,
+        "type_id": 1,
+        "type_name": "单选题",
+        "answer_time": 0,
+        "answer_score": 0,
+        "experience_degree": 0.61,
+        "create_time": 1527667464,
+        "update_time": 1532590233,
+        "subject_id": 6,
+        "subject_name": "高三专用",
+        "parse_video": "",
+        "parse_video_qrcode": "",
+        "parse_content": "<p>设<img width=\"88\" height=\"36\" src=\"http://mtstatic.dev.xueping.com/dpi600/35/35a20f2a660886f2d7526a5d068abb05.gif?g(x)%20=%20\\frac{{f(x)}}{{{e^x}}}\" class=\"gsImgLatex mathType\"/>，则<img width=\"323\" height=\"43\" src=\"http://mtstatic.dev.xueping.com/dpi600/2d/2d319cf9dfefbc5da48a1f3b7ab1c461.gif?g%27(x)%20=%20\\frac{{[f%27(x)%20-%20f(x)]{e^x}}}{{{{({e^x})}^2}}}%20=%20\\frac{{f%27(x)%20-%20f(x)}}{{{e^x}}}%20%3E%200\" class=\"gsImgLatex mathType\"/>，故<img width=\"29\" height=\"17\" src=\"http://mtstatic.dev.xueping.com/dpi600/e8/e84fec1e074026d6fa8e3155482c35c3.gif?g(x)\" class=\"gsImgLatex mathType\"/>在<img width=\"12\" height=\"12\" src=\"http://mtstatic.dev.xueping.com/dpi600/e1/e1e1d3d40573127e9ee0480caf1283d6.gif?R\" class=\"gsImgLatex mathType\" style=\"white-space: normal;\"/>上单调递增，又<img width=\"61\" height=\"17\" src=\"http://mtstatic.dev.xueping.com/dpi600/7c/7c1c9491ba7c6e8d6d2cfa82e39b22ca.gif?y%20=%20f(x)\" class=\"gsImgLatex mathType\" style=\"white-space: normal;\"/>是定义在<img width=\"12\" height=\"12\" src=\"http://mtstatic.dev.xueping.com/dpi600/e1/e1e1d3d40573127e9ee0480caf1283d6.gif?R\" class=\"gsImgLatex mathType\" style=\"white-space: normal;\"/>上的奇函数，所以<img width=\"108\" height=\"17\" src=\"http://mtstatic.dev.xueping.com/dpi600/2b/2b3b06c453f013e43ebfbce093af492c.gif?f(1)%20=%20%20-%20f(%20-%201)\" class=\"gsImgLatex mathType\"/>，即<img width=\"218\" height=\"17\" src=\"http://mtstatic.dev.xueping.com/dpi600/e5/e59925476f870846ef43f18bd447f7a1.gif?c%20=%20%20-%20ef(1)%20=%20ef(%20-%201)%20=%20g(%20-%201)\" class=\"gsImgLatex mathType\"/>.又<img width=\"75\" height=\"17\" src=\"http://mtstatic.dev.xueping.com/dpi600/cb/cb9487c502fdc715c78233012505e07c.gif?a%20=%20g(\\ln%203)\" class=\"gsImgLatex mathType\"/>，<img width=\"74\" height=\"17\" src=\"http://mtstatic.dev.xueping.com/dpi600/46/46db77863875eed2fa0c4dd07794977d.gif?b%20=%20g(\\ln%202)\" class=\"gsImgLatex mathType\"/>，<img width=\"114\" height=\"13\" src=\"http://mtstatic.dev.xueping.com/dpi600/c0/c06a75d739aecd12841377696f24baed.gif?\\ln%203%20%3E%20\\ln%202%20%3E%20%20-%201\" class=\"gsImgLatex mathType\"/>，所以<img width=\"67\" height=\"13\" src=\"http://mtstatic.dev.xueping.com/dpi600/a4/a4a46d8c6c35bcf2023ea5c822278375.gif?a%20%3E%20b%20%3E%20c\" class=\"gsImgLatex mathType\" style=\"white-space: normal;\"/>.</p>",
+        "teacher_tips": "",
+        "kps": [
+            {
+                "kp_id": 241,
+                "kp_name": "导数",
+                "section_id": 102,
+                "section_name": "<p>导数与定积分</p>",
+                "chapter_id": 101,
+                "chapter_name": "<p>导数与定积分</p>"
+            },
+            {
+                "kp_id": 238,
+                "kp_name": "基本初等函数",
+                "section_id": 100,
+                "section_name": "<p>函数</p>",
+                "chapter_id": 99,
+                "chapter_name": "<p>函数</p>"
+            }
+        ],
+        "specials": [
+            {
+                "method_id": 394,
+                "method_name": "指、对数运算及指、对数方程和不等式",
+                "special_id": 197,
+                "special_name": "<p>基本初等函数</p>",
+                "kp_id": 238,
+                "kp_name": "基本初等函数",
+                "section_id": 100,
+                "section_name": "<p>函数</p>",
+                "chapter_id": 99,
+                "chapter_name": "<p>函数</p>"
+            },
+            {
+                "method_id": 410,
+                "method_name": "利用导数研究函数的单调性",
+                "special_id": 200,
+                "special_name": "<p>导数</p>",
+                "kp_id": 241,
+                "kp_name": "导数",
+                "section_id": 102,
+                "section_name": "<p>导数与定积分</p>",
+                "chapter_id": 101,
+                "chapter_name": "<p>导数与定积分</p>"
+            },
+            {
+                "method_id": 414,
+                "method_name": "导数的综合应用",
+                "special_id": 200,
+                "special_name": "<p>导数</p>",
+                "kp_id": 241,
+                "kp_name": "导数",
+                "section_id": 102,
+                "section_name": "<p>导数与定积分</p>",
+                "chapter_id": 101,
+                "chapter_name": "<p>导数与定积分</p>"
+            }
+        ],
+        "ablies": [],
+        "difficulty": 3,
+        "source": "云题库",
+        "file_abbreviation": "",
+        "star_level": 1,
+        "solution_number": 1,
+        "is_stop": 0,
+        "teaching_quality": 0,
+        "title": "<p>已知函数<img width=\"61\" height=\"17\" src=\"http://mtstatic.dev.xueping.com/dpi600/7c/7c1c9491ba7c6e8d6d2cfa82e39b22ca.gif?y%20=%20f(x)\" class=\"gsImgLatex mathType\" style=\"vertical-align: middle;\"/>是定义在<img width=\"12\" height=\"12\" src=\"http://mtstatic.dev.xueping.com/dpi600/e1/e1e1d3d40573127e9ee0480caf1283d6.gif?R\" class=\"gsImgLatex mathType\" style=\"vertical-align: middle;\"/>上的奇函数，且<img width=\"119\" height=\"18\" src=\"http://mtstatic.dev.xueping.com/dpi600/3d/3dd1daa4be28735e78520e488c7851ab.gif?f%27(x)%20-%20f(x)%20%3E%200\" class=\"gsImgLatex mathType\" style=\"vertical-align: middle;\"/>恒成立.若<img width=\"80\" height=\"36\" src=\"http://mtstatic.dev.xueping.com/dpi600/4e/4e88533f0ed1ebfabbcface99679d66c.gif?a%20=%20\\frac{{f(\\ln%203)}}{3}\" class=\"gsImgLatex mathType\" style=\"vertical-align: middle;\"/>，<img width=\"79\" height=\"36\" src=\"http://mtstatic.dev.xueping.com/dpi600/ba/ba8007c6ec1ba6192f3bca9f7bf6483c.gif?b%20=%20\\frac{{f(\\ln%202)}}{2}\" class=\"gsImgLatex mathType\" style=\"vertical-align: middle;\"/>，<img width=\"79\" height=\"17\" src=\"http://mtstatic.dev.xueping.com/dpi600/72/72d7ec84f21adf9ff44d10b73e37236a.gif?c%20=%20%20-%20ef(1)\" class=\"gsImgLatex mathType\" style=\"vertical-align: middle;\"/>，则<img width=\"38\" height=\"15\" src=\"http://mtstatic.dev.xueping.com/dpi600/a4/a44c56c8177e32d3613988f4dba7962e.gif?a,b,c\" class=\"gsImgLatex mathType\" style=\"vertical-align: middle;\"/>的大小关系是（ &nbsp; ）</p>",
+        "items": [
+            {
+                "type_id": 1,
+                "type_name": "单选题",
+                "list_type": 1,
+                "title": "",
+                "options": [
+                    {
+                        "option_id": 433426,
+                        "option_content": "<p><img width=\"67\" height=\"13\" src=\"http://mtstatic.dev.xueping.com/dpi600/a4/a4a46d8c6c35bcf2023ea5c822278375.gif?a%20%3E%20b%20%3E%20c\" class=\"gsImgLatex mathType\"/></p>",
+                        "option_correct": 1,
+                        "option_score": null
+                    },
+                    {
+                        "option_id": 433427,
+                        "option_content": "<p><img width=\"67\" height=\"13\" src=\"http://mtstatic.dev.xueping.com/dpi600/e5/e5911277e0608384df8c50ddbd5bb7ba.gif?c%20%3E%20a%20%3E%20b\" class=\"gsImgLatex mathType\"/></p>",
+                        "option_correct": 0,
+                        "option_score": null
+                    },
+                    {
+                        "option_id": 433428,
+                        "option_content": "<p><img width=\"67\" height=\"13\" src=\"http://mtstatic.dev.xueping.com/dpi600/c5/c5acba8e3c95ddbd5895acb3bf8e3c04.gif?c%20%3E%20b%20%3E%20a\" class=\"gsImgLatex mathType\"/></p>",
+                        "option_correct": 0,
+                        "option_score": null
+                    },
+                    {
+                        "option_id": 433429,
+                        "option_content": "<p><img width=\"67\" height=\"13\" src=\"http://mtstatic.dev.xueping.com/dpi600/90/90029288dafe9e2b1a986e4b9bb333af.gif?b%20%3E%20c%20%3E%20a\" class=\"gsImgLatex mathType\"/></p>",
+                        "option_correct": 0,
+                        "option_score": null
+                    }
+                ]
+            }
+        ],
+        "difficulty_degree": 0.61,
+        "uses": {
+            "total": 0,
+            "school": 0,
+            "oneself": 0
+        }
+    }
+]

@@ -268,7 +268,7 @@ class TplNormal
     private function getPartObj($part_name, $value = array())
     {
         if (isset($this->part_class_arr[$part_name])) {
-            $part_obj = new $this->part_class_arr[$part_name]();
+            $part_obj = $this->part_class_arr[$part_name];
         } else {
             $part_obj = new Part($part_name);
         }

@@ -122,7 +122,7 @@ class TplNormal
         //css 样式
         $css_style_arr = array(
             '.topic_border' . Part::$css_class_suffix.',.topic_answer_parse_border'. Part::$css_class_suffix => array(
-                'font-size' => '12px',
+                'font-size' => '10px',
                 'line-height' => '16px',
                 'vertical-align' => 'middle',
                 'text-align' => 'justify',
@@ -132,6 +132,9 @@ class TplNormal
             ),
             '.topic_border' . Part::$css_class_suffix . ' img,'.'.topic_answer_parse_border' . Part::$css_class_suffix . ' img' => array(
                 'vertical-align' => 'middle',
+            ),
+            '.topic_parse' . Part::$css_class_suffix . ' p' => array(
+                'display' => 'inline',
             )
         );
         $this->setCssStyleArr($css_style_arr);

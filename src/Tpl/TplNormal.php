@@ -30,6 +30,13 @@ class TplNormal
     private static $part_html_arr = array();
     //当前级组件对象
     private static $cur_part_obj;
+    /**
+     * 默认是全学科
+     * @var bool
+     */
+    private $is_all_subject = true;
+    //是否显示选项
+    private $is_show_option = true;
 
     /**
      * @return array
@@ -110,6 +117,24 @@ class TplNormal
     {
         $this->css_style_arr = $css_style_arr;
     }
+
+    /**
+     * @param bool $is_all_subject
+     */
+    public function setIsAllSubject($is_all_subject)
+    {
+        $this->is_all_subject = $is_all_subject;
+    }
+
+    /**
+     * @param bool $is_show_option
+     */
+    public function setIsShowOption($is_show_option)
+    {
+        $this->is_show_option = $is_show_option;
+    }
+
+
 
 
     public function __construct()
@@ -271,7 +296,9 @@ class TplNormal
     private function getPartObj($part_name, $value = array())
     {
         if (isset($this->part_class_arr[$part_name])) {
-            $part_obj = $this->part_class_arr[$part_name];
+            $part_obj = new $this->part_class_arr[$part_name]();
+            $part_obj->setIsAllSubject($this->is_all_subject);
+            $part_obj->setIsShow($this->is_show_option);
         } else {
             $part_obj = new Part($part_name);
         }

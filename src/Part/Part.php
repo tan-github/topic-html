@@ -38,6 +38,15 @@ class Part
         }
         $this->setStyleClassName($this->part_name);
         $this->setStyleId($this->part_name);
+        //默认样式
+        $this->style_arr = array(
+            'list-style-type' => 'upper-alpha  !important',
+            'list-style' => 'upper-alpha  !important',
+            'padding-left' => '20px',
+            'display' => 'block',
+//                'visibility' => 'hidden',
+            'clear' => 'both',
+        );
     }
 
     /**

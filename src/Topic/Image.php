@@ -46,6 +46,11 @@ class Image
      */
     static public function resetImgSize($content)
     {
+        //替换图片属性
+        $content = preg_replace_callback('/data-latex=["]([^"]+)["]/',function ($matches){
+            return $matches[1].($matches[2]+1);
+        },$content);
+
         preg_match_all('/(<img[^>]*[\s]+)((src)[\s]*=[\s]*(([\"]([^\"]*)[\"])|([\']([^\']*)[\'])|([^\s]*)))([^>]*>)/si', $content, $arr);
 
         foreach ($arr[0] as $v) {

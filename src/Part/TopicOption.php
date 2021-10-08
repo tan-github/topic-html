@@ -16,25 +16,49 @@ class TopicOption extends Part
      * @var string
      */
     protected $part_name = 'topic_option';
-    private $is_all_subject = true;
     private $option_ul_obj;
     private $option_li_obj;
 
-    public function __construct($part_name = '')
+    /**
+     * @return TopicOptionUl
+     */
+    public function getOptionUlObj()
     {
-        parent::__construct($part_name);
-
-        $this->option_ul_obj = new TopicOptionUl();
-        $this->option_li_obj = new TopicOptionLi();
+        return $this->option_ul_obj;
     }
 
     /**
-     * @return bool
+     * @param TopicOptionUl $option_ul_obj
      */
-    public function isAllSubject()
+    public function setOptionUlObj($option_ul_obj)
     {
-        return $this->is_all_subject;
+        $this->option_ul_obj = $option_ul_obj;
     }
+
+    /**
+     * @return TopicOptionLi
+     */
+    public function getOptionLiObj()
+    {
+        return $this->option_li_obj;
+    }
+
+    /**
+     * @param TopicOptionLi $option_li_obj
+     */
+    public function setOptionLiObj($option_li_obj)
+    {
+        $this->option_li_obj = $option_li_obj;
+    }
+
+
+
+    /**
+     * 默认是全学科
+     * @var bool
+     */
+    private $is_all_subject = true;
+
 
     /**
      * @param bool $is_all_subject
@@ -44,7 +68,13 @@ class TopicOption extends Part
         $this->is_all_subject = $is_all_subject;
     }
 
+    public function __construct($part_name = '')
+    {
+        parent::__construct($part_name);
 
+        $this->option_ul_obj = new TopicOptionUl();
+        $this->option_li_obj = new TopicOptionLi();
+    }
 
     public function getPart()
     {
@@ -55,8 +85,9 @@ class TopicOption extends Part
             //数学：0纵向 1横向 2一排两个
             //全学科：1:纵向排列 2:横向排列 3:一排两个
             $list_type = $option_arr['list_type'];
-            if ($this->isAllSubject()) {
-                $list_type = $list_type == 0 ? 1 : $list_type;
+            $list_type = $list_type == 0 ? 1 : $list_type;
+
+            if ($this->is_all_subject) {
                 if ($list_type == 2) {
                     $rate = 25;
                 } elseif ($list_type == 3) {
@@ -85,15 +116,16 @@ class TopicOption extends Part
             }
 
             //ul
-            $style = array(
-                'list-style-type' => 'upper-alpha',
-                'padding-left' => '20px',
-                'display' => 'block',
-//                'visibility' => 'hidden',
-                'clear' => 'both',
-            );
-            $this->option_ul_obj->setStyleArr($style);
+//            $style = array(
+//                'list-style-type' => 'upper-alpha',
+//                'padding-left' => '20px',
+//                'display' => 'block',
+////                'visibility' => 'hidden',
+//                'clear' => 'both',
+//            );
+//            $this->option_ul_obj->setStyleArr($style);
             $this->option_ul_obj->setHtmlContent($li_html);
+            $this->option_ul_obj->setAttributeArr(array('list_type' => $list_type));
             $ul_html = $this->option_ul_obj->getPart();
 
             //option

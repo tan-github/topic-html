@@ -21,6 +21,11 @@ class TopicHtmlArr
      * @var bool
      */
     private $is_all_subject = true;
+    /**
+     * 是否显示答案和解析，例：【答案】
+     * @var bool
+     */
+    private $is_show_answer_parse = true;
 
 
     /**
@@ -31,9 +36,20 @@ class TopicHtmlArr
         $this->is_all_subject = $is_all_subject;
     }
 
+    /**
+     * @param bool $is_show_answer_parse
+     */
+    public function setIsShowAnswerParse($is_show_answer_parse)
+    {
+        $this->is_show_answer_parse = $is_show_answer_parse;
+    }
+
+
+
     public function getTopicHtmlArr(&$topic_info, $params = array())
     {
-        $topic_arr = (new TopicArr())->getTopicArr($topic_info,$params);
+        $topic_arr_obj = new TopicArr();
+        $topic_arr = $topic_arr_obj->getTopicArr($topic_info,$params);
 
         $topic_arr['topic_title'] = $this->getTopicTitle($topic_arr['topic_title']);
         $topic_arr['topic_option'] = $this->getTopicOption($topic_arr['topic_option']);
@@ -101,8 +117,14 @@ class TopicHtmlArr
 
     private function getTopicAnswer($topic_answer)
     {
+
+        if ($this->is_show_answer_parse) {
+            $txt = '<span>【答案】</span>';
+        }else{
+            $txt = '';
+        }
         $str = '<div class="topic_comm answer' . self::$class_suffix . '">
-            <span>【答案】</span>
+            ' . $txt . '
             <div>' . $topic_answer . '</div>
         </div>';
 
@@ -111,8 +133,13 @@ class TopicHtmlArr
 
     private function getTopicParse($topic_parse)
     {
+        if ($this->is_show_answer_parse) {
+            $txt = '<span>【解析】</span>';
+        }else{
+            $txt = '';
+        }
         $str = '<div class="topic_comm analysis' . self::$class_suffix . '">
-            <span>【解析】</span>
+            ' . $txt . '
             ' . $topic_parse . '
         </div>';
 

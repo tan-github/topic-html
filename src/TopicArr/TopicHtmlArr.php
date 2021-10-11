@@ -15,7 +15,7 @@ class TopicHtmlArr
     protected $letter_arr = array("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "O", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
 
     //css类名后缀
-    static public $class_suffix = '_202109';
+    static public $class_suffix = '-202109';
     /**
      * 默认是全学科
      * @var bool

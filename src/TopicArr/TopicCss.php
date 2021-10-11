@@ -65,13 +65,16 @@ class TopicCss
         }
 
         .option-li' . TopicHtmlArr::$class_suffix . ' {
-            display: -webkit-flex;
-            display: flex;
+            position: relative;
             line-height: 15px;
         }
         
         .option-li' . TopicHtmlArr::$class_suffix . '>span {
-            margin-right: 2px;
+            position: absolute;
+        }
+        
+        .option-li' . TopicHtmlArr::$class_suffix . '>p {
+           padding-left: 14px;
         }
 
         .answer' . TopicHtmlArr::$class_suffix . ' {
@@ -116,10 +119,6 @@ class TopicCss
             margin-bottom: 0px;
         }
 
-        .xy-2 li>span {
-            margin-right: 4px;
-        }
-
         .x-4 {
             display: -webkit-flex;
             display: flex;
@@ -131,9 +130,6 @@ class TopicCss
             padding-right: 10px;
         }
 
-        .x-4 li>span {
-            margin-right: 4px;
-        }
     </style>';
 
         return $str;

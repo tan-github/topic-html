@@ -79,24 +79,18 @@ class TopicHtmlArr
             if ($this->is_all_subject) {
                 if ($list_type == 2) {
                     $ul_class = 'x-4';
-                    $rate = 25;
                 } elseif ($list_type == 3) {
-                    $rate = 50;
                     $ul_class = 'xy-2';
                 } else {
-                    $rate = 100;
                     $ul_class = 'y-4';
                 }
             }else{
                 if ($list_type == 1) {
-                    $rate = 25;
                     $ul_class = 'x-4';
                 } elseif ($list_type == 2) {
                     $ul_class = 'xy-2';
-                    $rate = 50;
                 } else {
                     $ul_class = 'y-4';
-                    $rate = 100;
                 }
             }
 
@@ -104,7 +98,7 @@ class TopicHtmlArr
             $li_str_arr = array();
             foreach (array_values($option_arr['options']) as $key => $option) {
                 $letter = isset($this->letter_arr[$key]) ? $this->letter_arr[$key] : '';
-                $li_str_arr[] = '<li class="option-li' . self::$class_suffix . '" style="width:' . $rate . '%;float:left;">
+                $li_str_arr[] = '<li class="option-li' . self::$class_suffix . '">
         <span>' . $letter . '.</span>' . $option['option_content'] . '</li>';
             }
 

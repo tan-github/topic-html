@@ -62,7 +62,7 @@ class TopicHtmlArr
 
     private function getTopicTitle($topic_title)
     {
-        $str = '<div class="topic_comm topic' . self::$class_suffix . '">' . $topic_title . '</div>';
+        $str = '<div class="topic-comm topic' . self::$class_suffix . '">' . $topic_title . '</div>';
 
         return $str;
     }
@@ -102,7 +102,7 @@ class TopicHtmlArr
         <span>' . $letter . '.</span>' . $option['option_content'] . '</li>';
             }
 
-            $ul_str = '<ul class="topic_comm option-ul' . self::$class_suffix . ' clearfix '.$ul_class.'">' . implode('', $li_str_arr) . '</ul>';
+            $ul_str = '<ul class="topic-comm option-ul' . self::$class_suffix . ' clearfix '.$ul_class.'">' . implode('', $li_str_arr) . '</ul>';
 
             return $ul_str;
         }
@@ -117,7 +117,7 @@ class TopicHtmlArr
         }else{
             $txt = '';
         }
-        $str = '<div class="topic_comm answer' . self::$class_suffix . '">
+        $str = '<div class="topic-comm answer' . self::$class_suffix . '">
             ' . $txt . '
             <div>' . $topic_answer . '</div>
         </div>';
@@ -132,7 +132,7 @@ class TopicHtmlArr
         }else{
             $txt = '';
         }
-        $str = '<div class="topic_comm analysis' . self::$class_suffix . '">
+        $str = '<div class="topic-comm analysis' . self::$class_suffix . '">
             ' . $txt . '
             ' . $topic_parse . '
         </div>';

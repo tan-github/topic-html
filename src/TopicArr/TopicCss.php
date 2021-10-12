@@ -40,7 +40,7 @@ class TopicCss
             padding: 0;
         }
 
-        .topic_comm {
+        .topic-comm {
             font-size: '.$this->topic_font_size.';
             font-family: \''.$this->topic_font_fam.'\';
         }
@@ -107,6 +107,7 @@ class TopicCss
         }
 
         .xy-2 li {
+            width: 50%;
             margin-bottom: 4px;
             box-sizing: border-box;
         }

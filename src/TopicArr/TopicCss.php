@@ -127,6 +127,10 @@ class TopicCss
             justify-content: space-between;
         }
 
+        .x-4 li {
+            width: 25%;
+        }
+        
         .x-4 li:nth-child(-n+3) {
             padding-right: 10px;
         }

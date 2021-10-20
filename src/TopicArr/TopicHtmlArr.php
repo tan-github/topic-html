@@ -27,6 +27,10 @@ class TopicHtmlArr
      */
     private $is_show_answer_parse = true;
 
+    /**
+     *
+     */
+    private $topic_arr_obj = null;
 
     /**
      * @param bool $is_all_subject
@@ -49,10 +53,15 @@ class TopicHtmlArr
     public function getTopicHtmlArr(&$topic_info, $params = array())
     {
         $topic_arr_obj = new TopicArr();
+        $this->topic_arr_obj = $topic_arr_obj;
         $topic_arr = $topic_arr_obj->getTopicArr($topic_info,$params);
 
+        $topic_option_arr = $topic_arr['topic_option'];
+        $topic_option_arr['type_id'] = $topic_info['type_id'];
+        $topic_option_arr['basic_type_id'] = isset($topic_info['basic_type_id']) ? $topic_info['basic_type_id'] : 0;
+
         $topic_arr['topic_title'] = $this->getTopicTitle($topic_arr['topic_title']);
-        $topic_arr['topic_option'] = $this->getTopicOption($topic_arr['topic_option']);
+        $topic_arr['topic_option'] = $this->getTopicOption($topic_option_arr);
         $topic_arr['topic_answer'] = $this->getTopicAnswer($topic_arr['topic_answer']);
         $topic_arr['topic_parse'] = $this->getTopicParse($topic_arr['topic_parse']);
 
@@ -70,7 +79,7 @@ class TopicHtmlArr
     private function getTopicOption($option_arr)
     {
         //选择题
-        if (is_array($option_arr) && $option_arr && in_array($option_arr['type_id'], array(1, 2))) {
+        if (is_array($option_arr) && $option_arr && $this->topic_arr_obj->isSelectTopic($option_arr)) {
             //数学：0纵向 1横向 2一排两个
             //全学科：1:纵向排列 2:横向排列 3:一排两个
             $list_type = $option_arr['list_type'];

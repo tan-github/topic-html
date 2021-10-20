@@ -28,154 +28,130 @@ class Test
 
         $str = '[
     {
-        "id": 201511100000276,
-        "type_id": 1,
+        "id": 201511100117144,
+        "type_id": 20,
         "basic_type_id": 1,
+        "type_name": "选择题",
+        "subject_id": 41,
+        "resource_type": 1,
         "is_large_topic": 0,
-        "type_name": "单选题",
         "difficulty": 1,
-        "subject_id": 12,
-        "create_time": 1590652297,
-        "update_time": 1620716293,
-        "subject_name": "物理",
+        "experience_degree": 0.86,
+        "difficulty_degree": 0.86,
+        "create_time": 1608688922,
+        "update_time": 1631864427,
+        "subject_name": "数学",
         "is_stop": 0,
         "relation_topic": [],
         "source": "云题库",
-        "source_title": "word：【100所名校】2018-2019学年福建省三明市第一中学高一下学期开学考试物理试题（陈明伟编辑）（陈明伟审）(10+7+0)（2020-05-28 15:18:10）",
-        "title": "<p>钓鱼岛群岛自古以来就是中国领土，其附近海域是渔民祖祖辈辈传统的谋生渔场。我国派出海监编队到钓鱼岛海域护渔。如图所示，中国海监46船（甲）和中国海监49船（乙），在钓鱼岛领海内开展例行维权巡航。甲、乙两船并排行驶，甲船上的船员看见钓鱼岛向东移，乙船内的船员发现甲船没有动。如果以钓鱼岛为参照物，上述事实说明（ ）<br/><img src=\"http://tkimgs.zhixinhuixue.net/image/editor/2021/01/21/1611207638449186.png\" title=\"1611207638449186.png\" alt=\"image.png\" width=\"214\" height=\"102\" style=\"width: 214px; height: 102px;\"/></p>",
-        "parse_content": "<p>甲船上的船员看见钓鱼岛向东移，以钓鱼岛为参照物，甲船向西运动，乙船内的船员发现甲船没有动。甲、乙两船的速度、行驶的方向应该是一样的。即甲、乙两船以相等的速度都向西运动，故选项D正确。</p>",
+        "source_title": "word：广东省惠州市惠阳区2018-2019学年九年级(上)期中数学试卷（已编辑魏佳怡）（2020-12-23 09:55:59）",
+        "title": "<p>下列方程中， 一元二次方程有（ ）<br/>①<img src=\"http://tkimgs.zhixinhuixue.net/image/word/2020/11/27/1606447354968821.png\" data-type=\"math\"  width=\"127\" height=\"25\" style=\"white-space: normal; width: 95.25pt; height: 18.75pt;\"/>；②<img src=\"http://tkimgs.zhixinhuixue.net/image/word/2020/12/23/1608688594909933.png\" style=\"width: 82.85pt; height: 17.85pt\" data-type=\"math\"  width=\"110\" height=\"24\"/>；③<img src=\"http://tkimgs.zhixinhuixue.net/image/word/2020/12/23/1608688594350411.png\" style=\"width: 50pt; height: 30pt\" data-type=\"math\"  width=\"66.67\" height=\"40.0\"/>；④<img src=\"http://tkimgs.zhixinhuixue.net/image/word/2020/11/03/1604372076759452.png\" data-type=\"math\"  width=\"108\" height=\"24\" style=\"white-space: normal; width: 81pt; height: 18pt;\"/>；⑤<img src=\"http://tkimgs.zhixinhuixue.net/image/word/2020/12/23/1608688594263347.png\" data-type=\"math\"  width=\"88.0\" height=\"40.0\" style=\"width: 66pt; height: 30pt;\"/></p>",
+        "parse_content": "<p>①二次项系数可能为0，错误；②方程含有两个未知数，错误；③不是整式方程，错误；④化简之后无二次项，变为一元一次方程，错误；⑤符合一元二次方程定义，正确．故选：B．<br/></p>",
         "items": [
             {
-                "type_id": 1,
+                "type_id": 20,
+                "list_type": 2,
                 "options": [
                     {
-                        "option_id": 683,
-                        "option_content": "<p>甲船向西运动，乙船不动<br/></p>",
-                        "option_correct": 0,
-                        "option_score": ""
-                    },
-                    {
-                        "option_id": 684,
-                        "option_content": "<p>乙船向西运动，甲船不动<br/></p>",
-                        "option_correct": 0,
-                        "option_score": ""
-                    },
-                    {
-                        "option_id": 685,
-                        "option_content": "<p>甲船向西运动，乙船向东运动<br/></p>",
-                        "option_correct": 0,
-                        "option_score": ""
-                    },
-                    {
-                        "option_id": 686,
-                        "option_content": "<p>甲、乙两船以相等的速度都向西运动<br/></p>",
+                        "option_id": 276414,
+                        "option_content": "<p><img class=\"gsImgLatex mathType\" width=\"6\" height=\"12\" src=\"http://tkimgs.zhixinhuixue.net/image/word/2021/09/17/1631864145325437.gif\" />个</p>",
                         "option_correct": 1,
                         "option_score": ""
+                    },
+                    {
+                        "option_id": 276415,
+                        "option_content": "<p><img src=\"http://tkimgs.zhixinhuixue.net/image/word/2020/12/23/1608688594476810.png\" style=\"width: 8pt; height: 13pt\" data-type=\"math\"  width=\"10.67\" height=\"17.33\"/>个</p>",
+                        "option_correct": 0,
+                        "option_score": ""
+                    },
+                    {
+                        "option_id": 276416,
+                        "option_content": "<p><img src=\"http://tkimgs.zhixinhuixue.net/image/word/2020/12/23/1608688594769810.png\" style=\"width: 10.2pt; height: 12.75pt\" data-type=\"math\"  width=\"14\" height=\"17\"/>个</p>",
+                        "option_correct": 0,
+                        "option_score": ""
+                    },
+                    {
+                        "option_id": 276417,
+                        "option_content": "<p><img class=\"gsImgLatex mathType\" width=\"7\" height=\"11\" src=\"http://tkimgs.zhixinhuixue.net/image/word/2021/09/17/1631864145150301.gif\" />个</p>",
+                        "option_correct": 0,
+                        "option_score": ""
                     }
-                ],
-                "list_type": 1
+                ]
             }
         ],
         "slave": [],
         "kps": [
             {
-                "kp_id": 3105,
-                "kp_name": "参考系与坐标系"
+                "kp_id": 13305,
+                "kp_name": "一元二次方程的定义"
             }
         ],
         "specials": [],
-        "tag": [
+        "affiliate": [
             {
-                "tag_name": "试题来源",
-                "type": 3,
-                "field_name": "tag_12_43",
-                "field_value": [
-                    "2019福建三明一中开学考"
-                ]
+                "topic_affiliate_id": 417070,
+                "topic_id": 201511100117144,
+                "field_name": "试题质量（※）",
+                "field_key": "tag_41_82",
+                "field_value": 454
             },
             {
-                "tag_name": "年份",
-                "type": 1,
-                "field_name": "tag_12_52",
-                "field_value": [
-                    251
-                ]
+                "topic_affiliate_id": 417071,
+                "topic_id": 201511100117144,
+                "field_name": "数学素养（※）",
+                "field_key": "tag_41_24",
+                "field_value": 142
             },
             {
-                "tag_name": "教学进度",
-                "type": 2,
-                "field_name": "tag_12_159",
-                "field_value": [
-                    782
-                ]
+                "topic_affiliate_id": 417072,
+                "topic_id": 201511100117144,
+                "field_name": "教学进度（※）",
+                "field_key": "tag_41_31",
+                "field_value": 155
             },
             {
-                "tag_name": "物理思想",
-                "type": 2,
-                "field_name": "tag_12_155",
-                "field_value": [
-                    769
-                ]
+                "topic_affiliate_id": 417073,
+                "topic_id": 201511100117144,
+                "field_name": "题类",
+                "field_key": "tag_41_25",
+                "field_value": 165
             },
             {
-                "tag_name": "题型方法",
-                "type": 2,
-                "field_name": "tag_12_8",
-                "field_value": [
-                    109
-                ]
+                "topic_affiliate_id": 417074,
+                "topic_id": 201511100117144,
+                "field_name": "试题来源",
+                "field_key": "tag_41_62",
+                "field_value": "2018广东惠州期中"
             },
             {
-                "tag_name": "物理学科素养",
-                "type": 2,
-                "field_name": "tag_12_13",
-                "field_value": [
-                    41
-                ]
+                "topic_affiliate_id": 417075,
+                "topic_id": 201511100117144,
+                "field_name": "年份（※）",
+                "field_key": "tag_41_153",
+                "field_value": 752
             },
             {
-                "tag_name": "试题情景",
-                "type": 2,
-                "field_name": "tag_12_14",
-                "field_value": [
-                    30
-                ]
+                "topic_affiliate_id": 417076,
+                "topic_id": 201511100117144,
+                "field_name": "试题类型（※）",
+                "field_key": "tag_41_28",
+                "field_value": 175
             },
             {
-                "tag_name": "题型类别",
-                "type": 2,
-                "field_name": "tag_12_11",
-                "field_value": [
-                    70
-                ]
+                "topic_affiliate_id": 417077,
+                "topic_id": 201511100117144,
+                "field_name": "地区（※）",
+                "field_key": "tag_41_29",
+                "field_value": 370
             },
             {
-                "tag_name": "新颖等级",
-                "type": 1,
-                "field_name": "tag_12_55",
-                "field_value": [
-                    254
-                ]
-            },
-            {
-                "tag_name": "考试类型",
-                "type": 2,
-                "field_name": "tag_12_17",
-                "field_value": [
-                    84,
-                    85,
-                    86
-                ]
+                "topic_affiliate_id": 2778596,
+                "topic_id": 201511100117144,
+                "field_name": "",
+                "field_key": "field_41_20_13",
+                "field_value": "<p><span style=\"font-family: 宋体, SimSun;\">此题五个方程将一元二次方程需要注意的五个方面都概括到了，①<span style=\"font-family: 宋体, SimSun;\">“二次项的系数不等于</span><span style=\"font-family: 宋体, SimSun;\">0</span><span style=\"font-family: 宋体, SimSun;\">”；</span>②“一个未知数”；③<span style=\"font-family: 宋体, SimSun;\">“整式方程”</span>；④“化简后”；还有一个<span style=\"font-family: 宋体, SimSun;\">“未知数的最高次数是2”</span>．判断是否为一元二次方程严格按照这五个方面去排除即可.</span></p>"
             }
         ],
-        "custom_column": [],
-        "experience_degree": 0.86,
-        "difficulty_degree": 0.86,
-        "parse_video": "",
-        "teacher_tips": "",
-        "teaching_quality": "",
-        "teaching_thought": "",
-        "relation_method": "",
         "uses": {
             "total": 0,
             "school": 0,

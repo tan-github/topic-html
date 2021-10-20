@@ -27,9 +27,8 @@ class TopicArr
         $topic_option_arr = array();//选项
         $topic_answer_arr = array();//试题答案
         foreach ($topic_info['items'] as $item) {
-            $type_id = $item['type_id'];
             foreach ($item['options'] as $k => $option) {
-                if (in_array($type_id, array(1, 2))) {
+                if ($this->isSelectTopic($topic_info)) {
                     if ($option['option_correct']) {
                         $topic_answer_arr[] = isset($this->letter_arr[$k]) ? $this->letter_arr[$k] : '';
                     }
@@ -72,5 +71,26 @@ class TopicArr
         );
 
         return $topic_arr;
+    }
+
+    /**
+     * 判断是否是选择题
+     * @param $item
+     * @return bool
+     */
+    public function isSelectTopic(&$topic_info)
+    {
+        $basic_type_id = isset($topic_info['basic_type_id']) ? $topic_info['basic_type_id'] : 0;
+        $type_id = $topic_info['type_id'];
+
+        if (in_array($basic_type_id, array(1, 2, 3, 4))) {
+            return true;
+        }
+
+        if (in_array($type_id, array(1, 2))) {
+            return true;
+        }
+
+        return false;
     }
 }

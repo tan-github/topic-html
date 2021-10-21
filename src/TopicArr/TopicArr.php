@@ -24,11 +24,12 @@ class TopicArr
     {
         if(!$topic_info) return array();
 
+        $is_select_topic = $this->isSelectTopic($topic_info);
         $topic_option_arr = array();//选项
         $topic_answer_arr = array();//试题答案
         foreach ($topic_info['items'] as $item) {
             foreach ($item['options'] as $k => $option) {
-                if ($this->isSelectTopic($topic_info)) {
+                if ($is_select_topic) {
                     if ($option['option_correct']) {
                         $topic_answer_arr[] = isset($this->letter_arr[$k]) ? $this->letter_arr[$k] : '';
                     }
@@ -58,6 +59,7 @@ class TopicArr
         $topic_arr = array(
             'topic_id' => $topic_info['id'],
             'type_id' => $topic_info['type_id'],
+            'is_select_topic' => $is_select_topic,
             'basic_type_id' => isset($topic_info['basic_type_id']) ? $topic_info['basic_type_id'] : 0,
             'source' => isset($topic_info['source']) ? $topic_info['source'] : '',
             'topic_type' => $topic_info['type_id'],

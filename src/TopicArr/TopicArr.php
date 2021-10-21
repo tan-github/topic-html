@@ -82,7 +82,7 @@ class TopicArr
      * @param $item
      * @return bool
      */
-    public function isSelectTopic(&$topic_info)
+    private function isSelectTopic(&$topic_info)
     {
         $basic_type_id = isset($topic_info['basic_type_id']) ? $topic_info['basic_type_id'] : 0;
         $type_id = $topic_info['type_id'];

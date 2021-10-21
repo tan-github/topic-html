@@ -57,12 +57,15 @@ class TopicHtmlArr
         $topic_arr = $topic_arr_obj->getTopicArr($topic_info,$params);
 
         $topic_option_arr = $topic_arr['topic_option'];
-        $topic_option_arr['type_id'] = $topic_info['type_id'];
-        $topic_option_arr['basic_type_id'] = isset($topic_info['basic_type_id']) ? $topic_info['basic_type_id'] : 0;
+        $basic_type_id = isset($topic_info['basic_type_id']) ? $topic_info['basic_type_id'] : 0;
+        if ($topic_option_arr) {
+            $topic_option_arr['type_id'] = $topic_info['type_id'];
+            $topic_option_arr['basic_type_id'] = $basic_type_id;
+        }
 
         $topic_arr['topic_title'] = $this->getTopicTitle($topic_arr['topic_title']);
         $topic_arr['topic_option'] = $this->getTopicOption($topic_option_arr);
-        $topic_arr['topic_answer'] = $this->getTopicAnswer($topic_arr['topic_answer']);
+        $topic_arr['topic_answer'] = $this->getTopicAnswer($topic_arr['topic_answer'],$basic_type_id);
         $topic_arr['topic_parse'] = $this->getTopicParse($topic_arr['topic_parse']);
 
 
@@ -118,7 +121,7 @@ class TopicHtmlArr
 
     }
 
-    private function getTopicAnswer($topic_answer)
+    private function getTopicAnswer($topic_answer,$basic_type_id = 0)
     {
 
         if ($this->is_show_answer_parse) {
@@ -128,7 +131,7 @@ class TopicHtmlArr
         }
         $str = '<div class="topic-comm answer' . self::$class_suffix . '">
             ' . $txt . '
-            <div>' . $topic_answer . '</div>
+            <div class="'.($basic_type_id == 6?'long-empty':'').'">' . $topic_answer . '</div>
         </div>';
 
         return $str;

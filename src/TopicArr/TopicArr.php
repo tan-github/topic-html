@@ -57,6 +57,8 @@ class TopicArr
 
         $topic_arr = array(
             'topic_id' => $topic_info['id'],
+            'type_id' => $topic_info['type_id'],
+            'basic_type_id' => isset($topic_info['basic_type_id']) ? $topic_info['basic_type_id'] : 0,
             'source' => isset($topic_info['source']) ? $topic_info['source'] : '',
             'topic_type' => $topic_info['type_id'],
             'subject_id' => $topic_info['subject_id'],

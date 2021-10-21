@@ -82,6 +82,11 @@ class TopicCss
             display: flex;
             margin-bottom: 5px;
         }
+        
+        .answer' . TopicHtmlArr::$class_suffix . ' .long-empty {
+            display: -webkit-flex;
+            display: flex;
+        }
 
         .analysis' . TopicHtmlArr::$class_suffix . ' p {
             text-align: justify;

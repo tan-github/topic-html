@@ -57,6 +57,7 @@ class TopicHtmlArr
         $topic_arr = $topic_arr_obj->getTopicArr($topic_info,$params);
 
         $basic_type_id = isset($topic_info['basic_type_id']) ? $topic_info['basic_type_id'] : 0;
+        
         $topic_arr['topic_title'] = $this->getTopicTitle($topic_arr['topic_title']);
         $topic_arr['topic_option'] = $this->getTopicOption($topic_arr['topic_option'],$topic_arr['is_select_topic']);
         $topic_arr['topic_answer'] = $this->getTopicAnswer($topic_arr['topic_answer'],$basic_type_id);

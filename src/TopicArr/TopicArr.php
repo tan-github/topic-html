@@ -91,7 +91,7 @@ class TopicArr
             return true;
         }
 
-        if (in_array($type_id, array(1, 2))) {
+        if (in_array($type_id, array(1, 2, 11))) {
             return true;
         }
 

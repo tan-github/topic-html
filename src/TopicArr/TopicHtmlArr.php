@@ -69,7 +69,7 @@ class TopicHtmlArr
 
     private function getTopicTitle($topic_title)
     {
-        $str = '<div class="topic-comm topic' . self::$class_suffix . '">' . $topic_title . '</div>';
+        $str = '<div class="topic-common topic-stem' . self::$class_suffix . '">' . $topic_title . '</div>';
 
         return $str;
     }
@@ -81,7 +81,6 @@ class TopicHtmlArr
             //数学：0纵向 1横向 2一排两个
             //全学科：1:纵向排列 2:横向排列 3:一排两个
             $list_type = $option_arr['list_type'];
-            $list_type = $list_type == 0 ? 1 : $list_type;
 
             if ($this->is_all_subject) {
                 if ($list_type == 2) {
@@ -106,10 +105,12 @@ class TopicHtmlArr
             foreach (array_values($option_arr['options']) as $key => $option) {
                 $letter = isset($this->letter_arr[$key]) ? $this->letter_arr[$key] : '';
                 $li_str_arr[] = '<li class="option-li' . self::$class_suffix . '">
-        <span>' . $letter . '.</span>' . $option['option_content'] . '</li>';
+            <span class="option-label' . self::$class_suffix . '">' . $letter . '.</span>
+            <div class="option-content' . self::$class_suffix . '">'. $option['option_content'] . '</div>
+        </li>';
             }
 
-            $ul_str = '<ul class="topic-comm option-ul' . self::$class_suffix . ' clearfix '.$ul_class.'">' . implode('', $li_str_arr) . '</ul>';
+            $ul_str = '<ul class="topic-common option-ul' . self::$class_suffix . ' clearfix '.$ul_class.'">' . implode('', $li_str_arr) . '</ul>';
 
             return $ul_str;
         }
@@ -120,13 +121,13 @@ class TopicHtmlArr
     {
 
         if ($this->is_show_answer_parse) {
-            $txt = '<span>【答案】</span>';
+            $txt = '<span class="answer-label' . self::$class_suffix . '">【答案】</span>';
         }else{
             $txt = '';
         }
-        $str = '<div class="topic-comm answer' . self::$class_suffix . '">
+        $str = '<div class="topic-common answer' . self::$class_suffix . '">
             ' . $txt . '
-            <div class="'.($basic_type_id == 6?'long-empty':'').'">' . $topic_answer . '</div>
+            <div class="'.($basic_type_id == 6?'long-empty':'answer-content' . self::$class_suffix . '').'">' . $topic_answer . '</div>
         </div>';
 
         return $str;
@@ -135,13 +136,13 @@ class TopicHtmlArr
     private function getTopicParse($topic_parse)
     {
         if ($this->is_show_answer_parse) {
-            $txt = '<span>【解析】</span>';
+            $txt = '<span class="analysis-label' . self::$class_suffix . '">【解析】</span>';
         }else{
             $txt = '';
         }
-        $str = '<div class="topic-comm analysis' . self::$class_suffix . '">
+        $str = '<div class="topic-common analysis' . self::$class_suffix . '">
             ' . $txt . '
-            ' . $topic_parse . '
+            <div class="analysis-content' . self::$class_suffix . '">' . $topic_parse . '</div>
         </div>';
 
         return $str;

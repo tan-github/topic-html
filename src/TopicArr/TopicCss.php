@@ -40,47 +40,51 @@ class TopicCss
             padding: 0;
         }
 
-        .topic-comm {
-            font-size: '.$this->topic_font_size.';
-            font-family: \''.$this->topic_font_fam.'\';
-        }
-
         .clearfix::after {
-            content: \' . \';
+            content: \'.\';
             height: 0;
             display: block;
             visibility: hidden;
             clear: both;
         }
 
-        .topic' . TopicHtmlArr::$class_suffix . ' {
+        .topic-common {
+            font-size: '.$this->topic_font_size.';
+            font-family: \''.$this->topic_font_fam.'\';
+        }
+
+        .topic-stem' . TopicHtmlArr::$class_suffix . ' {
             line-height: 16px;
-            vertical-align: middle;
             text-align: justify;
+            vertical-align: middle;
+            margin-bottom: 8px;
         }
 
         .option-ul' . TopicHtmlArr::$class_suffix . ' {
             list-style: none;
-            margin: 4px 0 6px;
+            margin-bottom: 8px;
         }
 
         .option-li' . TopicHtmlArr::$class_suffix . ' {
             position: relative;
-            line-height: 15px;
+            line-height: 16px;
         }
         
-        .option-li' . TopicHtmlArr::$class_suffix . '>span {
+        .option-li' . TopicHtmlArr::$class_suffix . ' .option-label' . TopicHtmlArr::$class_suffix . ' {
             position: absolute;
+            top: 0;
+            left: 0;
         }
         
-        .option-li' . TopicHtmlArr::$class_suffix . '>p {
-           padding-left: 14px;
+        .option-li' . TopicHtmlArr::$class_suffix . ' .option-content' . TopicHtmlArr::$class_suffix . ' {
+            margin-left: 12px;
+            text-align: justify;
         }
 
         .answer' . TopicHtmlArr::$class_suffix . ' {
             display: -webkit-flex;
             display: flex;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
         
         .answer' . TopicHtmlArr::$class_suffix . ' .long-empty {
@@ -88,17 +92,34 @@ class TopicCss
             display: flex;
         }
 
-        .analysis' . TopicHtmlArr::$class_suffix . ' p {
+        .answer' . TopicHtmlArr::$class_suffix . ' .answer-label' . TopicHtmlArr::$class_suffix . ' {
+            margin-left: -5px;
+        }
+
+        .answer' . TopicHtmlArr::$class_suffix . ' .answer-content' . TopicHtmlArr::$class_suffix . ' img {
+            vertical-align: middle;
+        }
+
+        .analysis' . TopicHtmlArr::$class_suffix . ' .analysis-label' . TopicHtmlArr::$class_suffix . ' {
+            margin-left: -5px;
+            margin-right: -5px;
+        }
+
+        .analysis' . TopicHtmlArr::$class_suffix . ' .analysis-content' . TopicHtmlArr::$class_suffix . ' {
             text-align: justify;
             line-height: 16px;
             display: inline
         }
+
+        .analysis' . TopicHtmlArr::$class_suffix . ' .analysis-content' . TopicHtmlArr::$class_suffix . '  img {
+            vertical-align: middle;
+        }
         
         .y-4 li {
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
-        .y-4 li:nth-child(4) {
+        .y-4 li:last-child {
             margin-bottom: 0px;
         }
 
@@ -113,7 +134,7 @@ class TopicCss
 
         .xy-2 li {
             width: 50%;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             box-sizing: border-box;
         }
 
